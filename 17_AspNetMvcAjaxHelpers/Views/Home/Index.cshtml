@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+@Ajax.ActionLink("Yükle", "LoadData", null, new AjaxOptions() { HttpMethod = "GET", UpdateTargetId = "list", InsertionMode = InsertionMode.Replace,LoadingElementId="loading",LoadingElementDuration=300 }, new { @class = "btn btn-success" })
+@*InsertionMode=InsertionMode.Replace  icini yeni cekilen datayla degistirir. Silip yerine yazar. de*@
+
+<hr />
+
+<div id="loading" class="alert alert-warning" style="display:none">
+    Yükleniyor...
+</div>
+
+<ul class="list-group " id="list"></ul>
+
+
